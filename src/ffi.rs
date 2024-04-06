@@ -774,6 +774,9 @@ pub struct DispatchDesc {
 }
 impl DispatchDesc {
     pub fn constant_buffer(&self) -> &[u8] {
+        if self.constant_buffer_data.is_null() {
+            return &[];
+        }
         unsafe {
             std::slice::from_raw_parts(
                 self.constant_buffer_data,
