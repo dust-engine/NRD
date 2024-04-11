@@ -626,7 +626,7 @@ impl Default for CommonSettings {
 
 #[repr(u32)]
 #[allow(non_camel_case_types)]
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ResourceType {
     //=============================================================================================================================
     // COMMON INPUTS
